@@ -20,7 +20,6 @@ header {
 header .container{
     display: flex;
     justify-content: space-between;
-    /*justify-content: space-around;*/
     align-items: center;
 }
 
@@ -57,6 +56,7 @@ nav a:hover {
     justify-content:center;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .overview-hero-image { 
@@ -68,10 +68,10 @@ nav a:hover {
 
 .overview-hero-image img{
     width: 100%;
-    /*min-width: 200px;*/
+    min-width: 100px;
     height: auto;
-    max-height: 150px;
-    /*min-height: 120px;*/
+    max-height: 50px;
+    min-height: 120px;
 }
 
 .overview-hero-text {
@@ -92,10 +92,10 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
+    overflow: auto;
 }
 
 .learn-about img{
-    /*width: 210px;*/
     width:100%;
     height: 210px;
     padding: 5px
@@ -135,10 +135,10 @@ nav a:hover {
     justify-content: space-between;
     align-items: center;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 .testing-desciption {
-    /*width: 490px;*/
     width: 61%;
     padding: 1% 0%;
     margin: 1%;
@@ -183,6 +183,7 @@ nav a:hover {
 
 .stories .container article {
     display: flex;
+    justify-content: center;*/
     align-items: flex-start;
     gap: 40px;
     padding: 5px 0px;
@@ -196,7 +197,6 @@ nav a:hover {
 }
 
 .article-body {
-    /*width: 600px;*/
     width: 72%;
 }
 
@@ -209,11 +209,13 @@ nav a:hover {
 .newsletter .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .newsletter .container p{
-    /*width: 500px;*/
     width: 50%;
     margin-top: 0px;
 }
@@ -232,19 +234,10 @@ form button {
     color: white;
     padding: 15px 50px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
-footer {
-    background-color: #4A5568;
-    color: white;
-    padding: 25px 15px;
-}
-
-footer p {
-    margin:0px;
-}
-
-input[type=email] {
+form input[type="email"] {
     padding:15px; 
     width: 290px;
     border:1px solid transparent;
@@ -257,6 +250,36 @@ input[type=email] {
     align-content: center;
     width: 800px;
     height: 25px;
+    max-width: 100%; 
+    text-align: center; 
+    margin: 0 auto;
+    padding-bottom: 20px;
 }
 
+footer {
+    background-color: #4A5568;
+    color: white;
+    padding: 25px 15px;
+}
 
+footer p {
+    margin:0px;
+}
+
+@media (max-width: 768px) {
+    .stories .container article {
+        flex-wrap: wrap;
+    }
+
+    form {
+        flex-wrap: wrap; 
+        width: 90%; 
+    }
+
+    form input[type="email"] {
+        padding:5px; 
+        max-width: 60%;
+        min-width: 200px;
+        height: 35px;
+    }
+}
